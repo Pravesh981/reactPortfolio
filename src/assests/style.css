@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family:"Shadows Into Light", cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+/*------------------------For Loging Register Email and Password Error CSS------------------  */
+
+.border-error {
+    border: 1px solid var(--red) !important;
+}
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    /* overflow-x: hidden; */
+    /* background: linear-gradient(90deg, rgba(139,112,181,1) 0%, rgba(57,38,87,1) 100%); */
+    background: linear-gradient(90deg, rgba(139,112,181,1) 0%, rgba(57,38,87,1) 100%);
+    
+}
+
+a {
+    text-decoration: none;
+    color: #0059A9;
+}
+
+:root {
+    --white: #ffffff;
+    --gray: #f1f1f1;
+    --gray-1: #bcbcbf;
+    --gray-2: #d1d2d3;
+    --gray-3: #e5e6e6;
+    --gray-4: #7a7a7a;
+    --gray-5: #303030;
+    --gray-6: #606060;
+    --gray-7: #c4c4c4;
+    --gray-8: #CFCFCF;
+    --gray-9: #f2f2f2;
+    --gray-bg: #F7F7F7;
+    --purple-1:#A178B9;
+    --light-red: #ffe9e9;
+    --light-red-bg: #ffe6e6;
+    --backround-color: #ffffff;
+    --secondary-backround-color: #f1f1f1;
+    --blue: #0059A9;
+    --dark-blue: #1a1c43;
+    --blue: rgba(0, 89, 169, 1);
+    --red: #d22027;
+    --light-green: #3BBA30;
+    --border-color: #f1f1f1;
+    --primary-font:"Shadows Into Light", cursive;
+    --purple: #220A33;
+    --pink: #E36BFF;
+    --purple2: #8a2be2;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 64px;
+}
+
+h2 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    color: var(--purple);
+    font-size: 40px;
+
+}
+
+h3 {
+    font-family: var(--primary-font);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--gray);
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+h4 {
+    color: var(--purple);
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+
+}
+
+h5 {
+    color: var(--dark-blue);
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h6 {
+    /* color: var(--dark-blue); */
+    color: var(--blue);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 400;
+    /* line-height: 20px; */
+    margin: 0;
+}
+
+p {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    color: var(--dark-blue);
+    font-size: 16px;
+}
+
+.ml-2{
+    margin-left: 12px;
+}
+.mb-24{
+    margin-bottom: 24px;
+}
+.err-text {
+    font-size: 12px;
+    color: var(--red);
+    font-family: var(--primary-font);
+}
+
+.common-spacing {
+    padding: 40px 124px 124px;
+}
+
+.btn-style-1{
+    border-radius: 15px;
+    background-color: var(--purple2);
+    border-style: none;
+    padding: 0px 10px 0px 10px;
+    color: var(--gray);
+}
+.mb-24{
+    margin-bottom: 24px;
+} 
+.topicheading
+{
+ color: var(--backround-color);
+}
+
+.burgerImg{
+    height: 45px;
+    width: 45px;
+}
+.burgerImg:hover{   
+    background-color: #3BBA30;
+}
+.heading{
+    color: var(--gray);
+    margin-bottom: 12px;
+    font-size: 2.5rem; 
+   font-weight: bold;
+}
+
+
+.headerLogo{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+}
+.hero-left{
+    color: var(--gray);
+    text-align: center;
+}
+
+.hero-right-img{
+  width: 100%;
+}
+
+.hero-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    /* flex-direction: column; */
+}
+
+.projectPortion{
+    padding-bottom: 20px;
+}
+.contactImg{
+    border-radius: 25px;
+}
+
+.contactLeft{
+   border-style: solid;
+   border-color: var(--purple-1);
+   border-radius: 25px;
+   padding: 33px;
+   padding-left: 33px;
+}
+
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--purple-1) !important;
+  }
+  
+/* for custom scroll bar  */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple-1);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-1);
+}
+
+.leftHand{
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+}
+
+.rightArrowImg{
+    width: 35px;
+    height: 35px;
+}
+
+.skillSection{
+    padding-top: 20px;
+}
+.skillsCardSection{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    
+}
+
+.pageNotWorking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noFound{
+   width: 100%;
+    border-radius: 25px;
+    /* height: px; */
+}
+.heading-organised{
+    margin: 0;
+    color: var(--gray);
+}
+
+
+.rightHand{
+    flex-wrap: wrap;
+}
+
+.aboutInfo{
+    font-size: 30px;
+    color: var(--gray);
+}
+
+
+.experience {
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+    padding: 40px;
+    color: #fff;
+    border-radius: 12px;
+  }
+  
+  /* .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+  } */
+  
+  .organisation-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .organisation-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .organisation-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .heading-organised {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .skills {
+    font-size: 1rem;
+    color: #ffdf91;
+  }
+/*   
+  img {
+    transition: transform 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+  } */
+  
+/* media query for different screens for responsiveness  */
+
+@media only screen and (max-width: 600px) {
+    .common-spacing {
+        padding: 20px;
+    }
+    .hero-content {
+        flex-wrap: wrap;
+    }
+    .aboutInfo{
+        font-size: 20px;
+    }
+    .heading {
+        font-size: 24px;
+        
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .common-spacing{
+        padding: 40px;
+    }
+    .aboutInfo{
+        font-size: 28px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .common-spacing {
+        padding: 40px 80px;
+    }
+    .aboutInfo{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+@media only screen and (min-width: 1200px) {}
