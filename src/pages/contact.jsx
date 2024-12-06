@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import ContactCover from '../assests/images/a-full-stack-developer-with-a-diverse-range-of-ski-95Qaq2EuReOK1IwsEHh6Vw-qzJSnhLrT5uGWGJYueCX-g.jpeg';
 
 export default function Contact() {
@@ -6,37 +7,66 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    message: '',
+    message: ''
+  });
+  
+  const [status, setStatus] = useState({
+    submitting: false,
+    error: null,
+    success: false
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus({ submitting: true, error: null, success: false });
+
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      phone_number: formData.phone,
+      message: formData.message
+    };
+
     try {
-      const response = await fetch('http://localhost:8080/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+      await emailjs.send(
+        'service_69zr2sp',
+        'template_7fmwy61',
+        templateParams,
+        '3vvDeb_EadBThBj24'
+      );
+
+      setStatus({
+        submitting: false,
+        error: null,
+        success: true
       });
 
-      if (response.ok) {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form
-      } else {
-        alert('Failed to send message. Please try again.');
-      }
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setStatus(prev => ({ ...prev, success: false }));
+      }, 5000);
+
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error sending message. Please try again later.');
+      setStatus({
+        submitting: false,
+        error: 'Failed to send message. Please try again.',
+        success: false
+      });
     }
   };
 
@@ -46,7 +76,9 @@ export default function Contact() {
         <div className="contactLeft col-lg-6">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="fullName" className="form-label">Full Name</label>
+              <label htmlFor="fullName" className="form-label">
+                Full Name <span className="text-danger">*</span>
+              </label>
               <input
                 type="text"
                 id="fullName"
@@ -56,10 +88,13 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                disabled={status.submitting}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">Email</label>
+              <label htmlFor="email" className="form-label">
+                Email <span className="text-danger">*</span>
+              </label>
               <input
                 type="email"
                 id="email"
@@ -68,6 +103,8 @@ export default function Contact() {
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
+                required
+                disabled={status.submitting}
               />
             </div>
             <div className="mb-3">
@@ -80,10 +117,13 @@ export default function Contact() {
                 placeholder="Enter your phone number"
                 value={formData.phone}
                 onChange={handleChange}
+                disabled={status.submitting}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="message" className="form-label">Message</label>
+              <label htmlFor="message" className="form-label">
+                Message <span className="text-danger">*</span>
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -92,13 +132,38 @@ export default function Contact() {
                 placeholder="Enter your message"
                 value={formData.message}
                 onChange={handleChange}
-              ></textarea>
+                required
+                disabled={status.submitting}
+              />
             </div>
-            <button type="submit" className="btn-style-1">Submit</button>
+
+            {status.error && (
+              <div className="alert alert-danger" role="alert">
+                {status.error}
+              </div>
+            )}
+
+            {status.success && (
+              <div className="alert alert-success" role="alert">
+                Message sent successfully!
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              className="btn-style-1"
+              disabled={status.submitting}
+            >
+              {status.submitting ? 'Sending...' : 'Submit'}
+            </button>
           </form>
         </div>
         <div className="contactRight col-lg-6">
-          <img src={ContactCover} alt="Contact Us" className="w-100 contactImg" />
+          <img 
+            src={ContactCover} 
+            alt="Contact Us" 
+            className="w-100 contactImg" 
+          />
         </div>
       </div>
     </div>
