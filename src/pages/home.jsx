@@ -50,9 +50,9 @@ export default function home() {
                 </div>
                 <div className="rightHand d-flex">
                     <div className="project-contents col-lg-7">
-                        <h3 style={{color:'white'}}>
+                        <h4 style={{color:'white'}}>
                             Projects made so far which helped me improve my coding skills
-                        </h3>
+                        </h4>
                     </div>
                     <div className="project-img col-lg-5">
                         {/* <img src={projectCover} alt="" className='w-100'  /> */}
