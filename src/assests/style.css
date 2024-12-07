@@ -126,6 +126,10 @@ p {
 .mb-24{
     margin-bottom: 24px;
 }
+
+.mt-10{
+    margin-top: 10px;
+}
 .err-text {
     font-size: 12px;
     color: var(--red);
@@ -194,7 +198,11 @@ p {
 .contactImg{
     border-radius: 25px;
 }
-
+.contactRight{
+    border-radius: 25px;
+    padding: 33px;
+   
+}
 .contactLeft{
    border-style: solid;
    border-color: var(--purple-1);

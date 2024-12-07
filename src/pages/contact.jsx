@@ -158,7 +158,7 @@ export default function Contact() {
             </button>
           </form>
         </div>
-        <div className="contactRight col-lg-6">
+        <div className="contactRight col-lg-6 col-sm-12">
           <img 
             src={ContactCover} 
             alt="Contact Us" 
