@@ -9,7 +9,7 @@
     font-family:"Shadows Into Light", cursive;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /*------------------------For Loging Register Email and Password Error CSS------------------  */
 
@@ -57,7 +57,7 @@ a {
     --red: #d22027;
     --light-green: #3BBA30;
     --border-color: #f1f1f1;
-    --primary-font:"Shadows Into Light", cursive;
+    --primary-font: 'Roboto', sans-serif;
     --purple: #220A33;
     --pink: #E36BFF;
     --purple2: #8a2be2;
