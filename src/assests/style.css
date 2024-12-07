@@ -199,8 +199,8 @@ p {
     border-radius: 25px;
 }
 .contactRight{
-    border-radius: 25px;
-    padding: 33px;
+    
+    padding:10px 33px 0;
    
 }
 .contactLeft{
