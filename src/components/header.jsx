@@ -41,7 +41,7 @@ function Header() {
             </Link>
 
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               sx={{
                 fontFamily: 'var(--primary-font)',
