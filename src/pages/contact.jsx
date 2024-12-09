@@ -73,7 +73,7 @@ export default function Contact() {
   return (
     <div className="contactPage common-spacing">
       <div className="row">
-        <div className="contactLeft col-lg-6">
+        <div className="contactLeft col-lg-6 col-md-6 col-sm-12">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="fullName" className="form-label">
@@ -158,7 +158,7 @@ export default function Contact() {
             </button>
           </form>
         </div>
-        <div className="contactRight col-lg-6 col-sm-12">
+        <div className="contactRight col-lg-6 col-md-6 col-sm-12">
           <img 
             src={ContactCover} 
             alt="Contact Us" 

@@ -15,20 +15,20 @@ export default function home() {
         /*hero section*/
         <div className="main-section common-spacing">
             <div className="hero-content ">
-                <div className="hero-left col-lg-5">
+                <div className="hero-left col-lg-5 col-md-6">
                     <h2 className="heading">
-                        I'm a Software Engineer.|
+                        I'm a Software Engineer.
                     </h2>
                     <h4>
                         <b>Currently, on exploring and learning phase,</b>
                     </h4>
-                    <h3>
+                    <p className='subheading'>
                         A self-taught Software Engineer, functioning in the industry for 5 months now.
                         I make meaningful and delightful websites and backends that create an equilibrium
                         between user needs and business goals.
-                    </h3>
+                    </p>
                 </div>
-                <div className="hero-rigth  col-lg-7">
+                <div className="hero-rigth  col-lg-7 col-md-6">
                     <img src={heroImg} alt='heroImg' className='hero-right-img' />
 
                 </div>
@@ -50,7 +50,7 @@ export default function home() {
                 </div>
                 <div className="rightHand d-flex">
                     <div className="project-contents col-lg-7">
-                        <h4 style={{color:'white'}}>
+                        <h4 style={{color:'white'}} className='subheading'>
                             Projects made so far which helped me improve my coding skills
                         </h4>
                     </div>
