@@ -49,6 +49,10 @@ function Header() {
                 letterSpacing: '.3rem',
                 color: 'inherit',
                 ml: 1,
+                '@media (max-width:600px)': {  // xs breakpoint
+                  fontSize: '17px',
+                  letterSpacing: '3px'
+                }
               }}
             >
               Software Tech Boy
