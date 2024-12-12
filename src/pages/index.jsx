@@ -37,14 +37,6 @@ function index() {
             buttonText={'Learn More'}
           />
         </div>
-        <div className="col-lg-3 col-md-6 col-sm-12 mb-24">
-          <Card
-            title={'Tours & Travels'}
-            description={' Developed a responsive website providing information on global travel destinations and facilities'}
-            imageUrl={logo}
-            buttonText={'Learn More'}
-          />
-        </div>
       </div>
     </div>
   )
