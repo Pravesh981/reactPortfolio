@@ -24,7 +24,7 @@ function index() {
         <div className="col-lg-3 col-md-6 col-sm-12 mb-24">
           <Card
             title={'Hospital Management'}
-            description={' Developed a responsive website providing information on global travel destinations and facilities'}
+            description={' Developed a  backend system for managing hospital operation and RESTful APIs for CRUD operations on patients, doctors, and appointments'}
             imageUrl={hospital}
             buttonText={'Learn More'}
           />
@@ -32,7 +32,7 @@ function index() {
         <div className="col-lg-3 col-md-6 col-sm-12 mb-24">
           <Card
             title={'Chat Application'}
-            description={' Developed a responsive website providing information on global travel destinations and facilities'}
+            description={' Developed a chat screen application for communication'}
             imageUrl={chat}
             buttonText={'Learn More'}
           />
