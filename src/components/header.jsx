@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: 'var(--purple2)' }}>
+      <AppBar position="static" sx={{ background:'linear-gradient(45deg, #2C3E50, #3498DB)' }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
             {/* Logo */}
@@ -94,7 +94,7 @@ function Header() {
         onClose={toggleDrawer(false)}
         sx={{
           '& .MuiDrawer-paper': {
-            backgroundColor: 'var(--purple2)',
+            backgroundColor: '#3498DB',
             color: 'white',
             width: 250,
             animation: 'slideIn 0.3s ease',

@@ -24,8 +24,10 @@ body {
     max-width: 100%;
     /* overflow-x: hidden; */
     /* background: linear-gradient(90deg, rgba(139,112,181,1) 0%, rgba(57,38,87,1) 100%); */
-    background: linear-gradient(90deg, rgba(139,112,181,1) 0%, rgba(57,38,87,1) 100%);
-    
+    /* background: linear-gradient(90deg, rgba(139,112,181,1) 0%, rgba(57,38,87,1) 100%); */
+    background: linear-gradient(45deg, #2C3E50, #3498DB);
+    /* background: linear-gradient(45deg, #1A2980, #26D0CE); */
+    /* background: linear-gradient(45deg, #6B46C1, #60A5FA); */
 }
 
 a {
