@@ -6,7 +6,9 @@ import {
   Grid, 
   Typography, 
   Link, 
-  IconButton 
+  IconButton,
+  useTheme,
+  useMediaQuery 
 } from '@mui/material';
 import { 
   LinkedIn, 
@@ -18,24 +20,71 @@ import {
 } from '@mui/icons-material';
 
 const Footer = () => {
-  const pages = ['Home', 'Projects', 'Experience', 'Contact'];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  // Configuration objects for better maintainability
+  const contactInfo = [
+    { 
+      icon: <EmailOutlined />, 
+      text: 'praveshsingh439@gmail.com',
+      href: 'mailto:praveshsingh439@gmail.com'
+    },
+    { 
+      icon: <PhoneOutlined />, 
+      text: '+91-7827715657',
+      href: 'tel:+917827715657'
+    },
+    { 
+      icon: <LocationOnOutlined />, 
+      text: 'New Delhi, India',
+      href: 'https://maps.google.com/?q=New+Delhi,India'
+    }
+  ];
+
+  const pages = [
+    { name: 'Home', path: '/' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Experience', path: '/experience' },
+    { name: 'Contact', path: '/contact' }
+  ];
+
   const socialLinks = [
     { 
       icon: <LinkedIn />, 
       href: "https://www.linkedin.com/in/pravesh-s-1783bb122/", 
-      name: "LinkedIn" 
+      name: "LinkedIn",
+      ariaLabel: "Visit Pravesh's LinkedIn profile"
     },
     { 
       icon: <GitHub />, 
       href: "https://github.com/Pravesh981", 
-      name: "GitHub" 
+      name: "GitHub",
+      ariaLabel: "Visit Pravesh's GitHub profile"
     },
     { 
       icon: <Description />, 
       href: resumepdf, 
-      name: "Resume" 
+      name: "Resume",
+      ariaLabel: "Download Pravesh's Resume"
     }
   ];
+
+  const FooterSection = ({ title, children }) => (
+    <Grid item xs={12} sm={4}>
+      <Typography 
+        variant="h6" 
+        gutterBottom
+        sx={{ 
+          fontWeight: 600,
+          mb: 2
+        }}
+      >
+        {title}
+      </Typography>
+      {children}
+    </Grid>
+  );
 
   return (
     <Box 
@@ -43,101 +92,102 @@ const Footer = () => {
       sx={{ 
         backgroundColor: '#3498DB', 
         color: 'white', 
-        py: 6,
-        // mt: 4
+        py: { xs: 4, md: 6 },
+        position: 'relative',
+        width: '100%'
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-         
           {/* Contact Information */}
-          <Grid item xs={12} sm={4}>
-            <Typography variant="h6" gutterBottom >
-              Contact Me
-            </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1}}>
-              <EmailOutlined sx={{ mr: 1 }} />
-              <Typography variant="body2" color='white'>
-                praveshsingh439@gmail.com
-              </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <PhoneOutlined sx={{ mr: 1 }} />
-              <Typography variant="body2" color='white'>
-                +91-7827715657
-              </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <LocationOnOutlined sx={{ mr: 1 }} />
-              <Typography variant="body2" color='white'>
-                New Delhi, India
-              </Typography>
-            </Box>
-          </Grid>
+          <FooterSection title="Contact Me">
+            {contactInfo.map(({ icon, text, href }) => (
+              <Link
+                key={text}
+                href={href}
+                color="inherit"
+                underline="hover"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  mb: 1.5,
+                  '&:hover': { color: 'var(--secondary-color)' }
+                }}
+              >
+                <Box sx={{ mr: 1, display: 'flex', alignItems: 'center' }}>
+                  {icon}
+                </Box>
+                <Typography variant="body2" color="inherit">
+                  {text}
+                </Typography>
+              </Link>
+            ))}
+          </FooterSection>
 
           {/* Quick Links */}
-          <Grid item xs={12} sm={4}>
-            <Typography variant="h6" gutterBottom>
-              Quick Links
-            </Typography>
-            {pages.map((page) => (
+          <FooterSection title="Quick Links">
+            {pages.map(({ name, path }) => (
               <Link
-                key={page}
-                href={`/${page.toLowerCase()}`}
+                key={name}
+                href={path}
                 color="inherit"
                 underline="hover"
                 sx={{
                   display: 'block',
-                  mb: 1,
-                  transition: 'color 0.3s ease',
+                  mb: 1.5,
+                  transition: 'all 0.3s ease',
                   '&:hover': { 
                     color: 'var(--secondary-color)', 
-                    ml: 1 
+                    ml: 1,
+                    transform: 'translateX(4px)'
                   }
                 }}
               >
-                {page}
+                {name}
               </Link>
             ))}
-          </Grid>
+          </FooterSection>
 
           {/* Social Media */}
-          <Grid item xs={12} sm={4}>
-            <Typography variant="h6" gutterBottom>
-              Connect
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-              {socialLinks.map((social) => (
+          <FooterSection title="Connect">
+            <Box sx={{ 
+              display: 'flex', 
+              justifyContent: isMobile ? 'center' : 'flex-start',
+              gap: 2
+            }}>
+              {socialLinks.map(({ icon, href, name, ariaLabel }) => (
                 <IconButton
-                  key={social.name}
-                  href={social.href}
+                  key={name}
+                  href={href}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={ariaLabel}
                   color="inherit"
                   sx={{
-                    mr: 1,
-                    transition: 'transform 0.3s ease',
+                    transition: 'all 0.3s ease',
                     '&:hover': { 
-                      transform: 'scale(1.2)', 
+                      transform: 'scale(1.2) rotate(5deg)', 
                       color: 'var(--secondary-color)' 
                     }
                   }}
                 >
-                  {social.icon}
+                  {icon}
                 </IconButton>
               ))}
             </Box>
-          </Grid>
+          </FooterSection>
 
           {/* Copyright */}
-          <Grid item xs={12} textAlign="center" mt={2}>
+          <Grid item xs={12}>
             <Typography 
               variant="body2" 
+              align="center"
               sx={{ 
-                opacity: 0.7,
+                opacity: 0.9,
                 borderTop: '1px solid rgba(255,255,255,0.2)',
-                pt: 2
+                pt: 2,
+                mt: 2
               }}
-              color='white'
             >
               © {new Date().getFullYear()} Pravesh Singh. All Rights Reserved.
             </Typography>

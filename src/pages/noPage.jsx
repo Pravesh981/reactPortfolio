@@ -1,5 +1,6 @@
 import React from 'react';
 import lostPage from '../assests/images/404/404Page.gif';
+import { Link } from 'react-router-dom';
 
 function LostPage() {
   return (
@@ -16,7 +17,7 @@ function LostPage() {
         <img src={lostPage} alt="" srcset="" className='noFound' />
         
       </div>
-      <button className="btn-style-1">Go To Home</button>
+      <Link to={'/'}><button className="btn-style-1">Go To Home</button></Link>
     </div>
    </div>
   )

@@ -149,7 +149,8 @@ p {
 
 .btn-style-1{
     border-radius: 15px;
-    background-color: var(--purple2);
+    /* background-color: var(--purple2); */
+    background-color:cornflowerblue;
     border-style: none;
     padding: 0px 10px 0px 10px;
     color: var(--gray);
