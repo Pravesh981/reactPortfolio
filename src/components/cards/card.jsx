@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function ImgMediaCard({ title, description, imageUrl, altText, buttonText }) {
+export default function ImgMediaCard({ title, description, imageUrl, altText, buttonText, buttonLink }) {
   return (
     <Card
       sx={{
@@ -57,6 +57,9 @@ export default function ImgMediaCard({ title, description, imageUrl, altText, bu
               backgroundColor: '#0056b3',
             },
           }}
+          href={buttonLink} // Dynamically use the buttonLink prop
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Improves security
         >
           {buttonText}
         </Button>

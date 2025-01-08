@@ -19,6 +19,7 @@ function index() {
             description={' Developed a responsive website providing information on global travel destinations and facilities'}
             imageUrl={logo}
             buttonText={'Learn More'}
+            buttonLink={'https://github.com/Pravesh981/Tours-and-travels'}
           />
         </div>
         <div className="col-lg-3 col-md-6 col-sm-12 mb-24">
